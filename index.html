@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cell Health Stix – Company Profile · START MedTech 2026</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --dark:    #0B1929;
+      --surface: #111f30;
+      --accent:  #0CC9A0;
+      --accent2: #0891B2;
+      --text:    #EDF4FB;
+      --muted:   #B8CDD9;
+      --dim:     #7A9BB0;
+      --glass:   rgba(255,255,255,0.045);
+      --bd:      rgba(255,255,255,0.09);
+      --warn:    #FFBD3D;
+      --danger:  #FF6B6B;
+      --ffd: 'DM Serif Display', serif;
+      --ffb: 'DM Sans', sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: var(--ffb);
+      background: #07111d;
+      min-height: 100vh;
+      padding: 2.5rem 1.5rem 4rem;
+      color: var(--text);
+    }
+    .wrap {
+      max-width: 940px;
+      margin: 0 auto;
+      background: var(--dark);
+      border-radius: 20px;
+      overflow: hidden;
+      position: relative;
+      border: 1px solid var(--bd);
+      box-shadow: 0 32px 80px rgba(0,0,0,0.5);
+    }
+    .wrap::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(12,201,160,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(12,201,160,0.03) 1px, transparent 1px);
+      background-size: 52px 52px;
+      pointer-events: none; z-index: 0;
+    }
+
+    /* ── STATUS BANNER ── */
+    .status-banner {
+      position: relative; z-index: 2;
+      background: linear-gradient(90deg, rgba(12,201,160,0.14) 0%, rgba(8,145,178,0.10) 100%);
+      border-bottom: 1px solid rgba(12,201,160,0.22);
+      padding: 0.65rem 2.8rem;
+      display: flex; align-items: center; gap: 2.5rem; flex-wrap: wrap;
+    }
+    .sb-item {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 0.7rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;
+    }
+    .sb-dot {
+      width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0;
+      animation: lpulse 2.2s ease-in-out infinite;
+    }
+    .sb-dot.green { background: var(--accent); box-shadow: 0 0 0 3px rgba(12,201,160,0.15); }
+    .sb-dot.blue  { background: var(--accent2); box-shadow: 0 0 0 3px rgba(8,145,178,0.15); animation-delay: 0.4s; }
+    .sb-dot.warn  { background: var(--warn); box-shadow: 0 0 0 3px rgba(255,189,61,0.15); animation-delay: 0.8s; }
+    @keyframes lpulse {
+      0%,100% { opacity: 1; }
+      50%      { opacity: 0.55; }
+    }
+    .sb-label { color: var(--muted); }
+    .sb-label strong { color: var(--text); }
+    .sb-sep { width: 1px; height: 16px; background: var(--bd); }
+
+    .accent-bar {
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent) 0%, rgba(12,201,160,0.25) 65%, transparent 100%);
+      position: relative; z-index: 1;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      display: grid; grid-template-columns: 1fr 1fr;
+      border-bottom: 1px solid var(--bd);
+      position: relative; z-index: 1;
+    }
+    .hero-l {
+      padding: 3rem 2.5rem 2.8rem 3rem;
+      border-right: 1px solid var(--bd);
+      display: flex; flex-direction: column; gap: 1.6rem;
+    }
+    .hero-r {
+      padding: 3rem 3rem 2.8rem 2.5rem;
+      display: flex; flex-direction: column; gap: 1.3rem;
+    }
+    .eyebrow {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 0.67rem; font-weight: 600; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--accent);
+    }
+    .eyebrow::before { content: ''; width: 18px; height: 2px; background: var(--accent); flex-shrink: 0; }
+    .logo-h1 { font-family: var(--ffd); font-size: 3.2rem; font-weight: 400; line-height: 1.02; letter-spacing: -0.01em; }
+    .logo-h1 em { font-style: italic; color: var(--accent); }
+    .tagline { font-size: 0.9rem; color: var(--muted); line-height: 1.7; max-width: 360px; }
+    .pill-row { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pill {
+      background: rgba(12,201,160,0.1); border: 1px solid rgba(12,201,160,0.22);
+      border-radius: 20px; padding: 3px 11px;
+      font-size: 0.67rem; font-weight: 600; letter-spacing: 0.06em;
+      text-transform: uppercase; color: var(--accent);
+    }
+    .pill.b { background: rgba(8,145,178,0.1); border-color: rgba(8,145,178,0.22); color: var(--accent2); }
+    .pill.w { background: rgba(255,189,61,0.1); border-color: rgba(255,189,61,0.22); color: var(--warn); }
+
+    .pstack { display: flex; flex-direction: column; gap: 0.65rem; }
+    .pitem {
+      display: flex; align-items: center; gap: 0.9rem;
+      padding: 0.7rem 1rem;
+      background: rgba(255,255,255,0.03); border: 1px solid var(--bd); border-radius: 10px;
+      transition: border-color 0.2s;
+    }
+    .pitem:hover { border-color: rgba(12,201,160,0.28); }
+    .picon {
+      width: 34px; height: 34px; border-radius: 7px; flex-shrink: 0;
+      background: rgba(12,201,160,0.1); border: 1px solid rgba(12,201,160,0.22);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .picon svg { width: 17px; height: 17px; }
+    .pname { font-size: 0.82rem; font-weight: 600; color: var(--text); display: block; }
+    .psub  { font-size: 0.67rem; color: var(--dim); display: block; margin-top: 2px; }
+
+    .live-badge {
+      display: flex; align-items: center; gap: 10px;
+      background: rgba(12,201,160,0.07); border: 1px solid rgba(12,201,160,0.18);
+      border-radius: 10px; padding: 0.9rem 1.1rem; text-decoration: none;
+      transition: border-color 0.2s;
+    }
+    .live-badge:hover { border-color: rgba(12,201,160,0.35); }
+    .live-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); flex-shrink: 0; animation: lpulse 2.2s ease-in-out infinite; }
+    .live-top  { font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--dim); display: block; }
+    .live-main { font-family: var(--ffd); font-size: 1.25rem; color: var(--accent); display: block; line-height: 1.15; }
+    .live-sub  { font-size: 0.7rem; color: var(--dim); margin-top: 2px; display: block; }
+
+    /* ── BODY ── */
+    .body { position: relative; z-index: 1; padding: 0 3rem 2.8rem; display: flex; flex-direction: column; gap: 2.2rem; }
+    .sec-divider { height: 1px; background: var(--bd); margin: 0 3rem; position: relative; z-index: 1; }
+    .sec-label {
+      font-size: 0.66rem; font-weight: 700; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--dim);
+      display: flex; align-items: center; gap: 10px;
+      padding-top: 2rem; margin-bottom: 1.1rem;
+    }
+    .sec-label::after { content: ''; flex: 1; height: 1px; background: var(--bd); }
+    h2 { font-family: var(--ffd); font-size: 1.15rem; font-weight: 400; color: var(--accent); margin-bottom: 0.55rem; border-bottom: 1px solid rgba(12,201,160,0.16); padding-bottom: 0.3rem; }
+    p { font-size: 0.83rem; color: var(--muted); line-height: 1.72; margin-bottom: 0.75rem; }
+    p:last-child { margin-bottom: 0; }
+    strong { color: var(--text); font-weight: 600; }
+    em.src { font-style: italic; font-size: 0.72rem; color: var(--dim); }
+    .col2 { display: grid; grid-template-columns: 1fr 1fr; gap: 2.2rem; }
+    .col3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.4rem; }
+    .glass { background: var(--glass); border: 1px solid var(--bd); border-radius: 12px; padding: 1.3rem 1.4rem; }
+    .accent-box {
+      background: rgba(12,201,160,0.05); border-left: 3px solid var(--accent);
+      padding: 0.85rem 1.1rem; margin-top: 0.8rem;
+      font-size: 0.81rem; color: var(--muted); line-height: 1.68;
+    }
+    .warn-box {
+      background: rgba(255,189,61,0.06); border-left: 3px solid var(--warn);
+      padding: 0.85rem 1.1rem; margin-top: 0.8rem;
+      font-size: 0.81rem; color: var(--muted); line-height: 1.68;
+    }
+
+    /* peer-reviewed badge */
+    .peer-badge {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: rgba(8,145,178,0.1); border: 1px solid rgba(8,145,178,0.25);
+      border-radius: 6px; padding: 4px 10px; font-size: 0.67rem; font-weight: 600;
+      letter-spacing: 0.07em; text-transform: uppercase; color: var(--accent2);
+      margin-bottom: 0.6rem; display: inline-flex;
+    }
+    .peer-badge::before { content: '✓'; font-size: 0.75rem; }
+
+    /* flow steps */
+    .steps { display: flex; flex-direction: column; }
+    .step { display: flex; gap: 1rem; align-items: flex-start; padding: 0.65rem 0; border-bottom: 1px solid var(--bd); }
+    .step:last-child { border-bottom: none; }
+    .snum { font-family: var(--ffd); font-size: 1.05rem; color: var(--accent); width: 22px; flex-shrink: 0; margin-top: 1px; }
+    .stitle { font-size: 0.81rem; font-weight: 600; color: var(--text); display: block; }
+    .sdesc  { font-size: 0.7rem; color: var(--dim); margin-top: 2px; display: block; }
+
+    /* color scale */
+    .cscale { display: flex; flex-direction: column; gap: 4px; }
+    .crow { display: grid; grid-template-columns: 14px 1fr auto auto; gap: 8px; align-items: center; font-size: 0.7rem; }
+    .csw { width: 13px; height: 13px; border-radius: 2px; flex-shrink: 0; }
+    .cn  { color: var(--muted); }
+    .cc  { color: var(--dim); font-size: 0.64rem; }
+    .ctag { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.04em; padding: 1px 6px; border-radius: 3px; }
+    .tok  { background: rgba(12,201,160,0.13); color: var(--accent); }
+    .tmod { background: rgba(255,189,61,0.13);  color: var(--warn); }
+    .thi  { background: rgba(255,107,107,0.13); color: var(--danger); }
+    .stress-idx { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 4px; margin-top: 0.75rem; }
+    .si { text-align: center; padding: 5px 4px; border-radius: 5px; font-size: 0.61rem; font-weight: 700; letter-spacing: 0.03em; }
+    .sig { background: rgba(12,201,160,0.13); color: var(--accent); }
+    .siy { background: rgba(255,189,61,0.13);  color: var(--warn); }
+    .sio { background: rgba(255,140,0,0.13);   color: #FF8C00; }
+    .sir { background: rgba(255,107,107,0.13); color: var(--danger); }
+
+    /* competitor table */
+    .ctable { width: 100%; border-collapse: collapse; font-size: 0.75rem; }
+    .ctable thead tr { border-bottom: 1px solid var(--bd); }
+    .ctable th { text-align: left; padding: 5px 8px; color: var(--dim); font-weight: 600; font-size: 0.67rem; text-transform: uppercase; letter-spacing: 0.08em; }
+    .ctable td { padding: 6px 8px; color: var(--muted); border-bottom: 1px solid rgba(255,255,255,0.04); vertical-align: top; }
+    .ctable tr.hl td { color: var(--text); }
+    .ctable td:first-child { font-weight: 600; white-space: nowrap; }
+    .badge-diff { background: rgba(12,201,160,0.12); border: 1px solid rgba(12,201,160,0.2); color: var(--accent); font-size: 0.63rem; font-weight: 600; padding: 2px 7px; border-radius: 4px; display: inline-block; }
+
+    /* team */
+    .tgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .tcard { background: var(--glass); border: 1px solid var(--bd); border-radius: 12px; padding: 1.2rem 1.3rem; }
+    .trole { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--dim); display: block; margin-bottom: 0.25rem; }
+    .tname { font-family: var(--ffd); font-size: 1.2rem; color: var(--accent); display: block; margin-bottom: 0.7rem; }
+    .ttags { display: flex; flex-wrap: wrap; gap: 4px; }
+    .ttag { background: rgba(255,255,255,0.05); border: 1px solid var(--bd); border-radius: 4px; padding: 2px 8px; font-size: 0.64rem; color: var(--muted); }
+
+    /* org */
+    .orgchart { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; }
+    .orgbox { background: rgba(0,0,0,0.25); border: 1px solid var(--bd); border-radius: 7px; padding: 0.6rem 1.2rem; text-align: center; font-size: 0.78rem; font-weight: 500; color: var(--muted); }
+    .orgbox.root { border-left: 3px solid var(--accent); color: var(--text); font-weight: 600; width: 100%; }
+    .org-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; width: 100%; }
+
+    /* esg */
+    .sdg-row { display: flex; gap: 0.7rem; flex-wrap: wrap; margin-top: 0.8rem; }
+    .sdg { background: rgba(12,201,160,0.09); border: 1px solid rgba(12,201,160,0.2); border-radius: 8px; padding: 0.55rem 0.9rem; text-align: center; }
+    .sdg-n { font-family: var(--ffd); font-size: 1.1rem; color: var(--accent); display: block; line-height: 1.0; }
+    .sdg-l { font-size: 0.6rem; color: var(--dim); display: block; margin-top: 2px; text-transform: uppercase; letter-spacing: 0.06em; }
+    .ebar { display: flex; align-items: center; gap: 10px; margin-bottom: 0.5rem; font-size: 0.75rem; }
+    .elabel { width: 170px; color: var(--muted); flex-shrink: 0; }
+    .etrack { flex: 1; height: 5px; background: rgba(255,255,255,0.09); border-radius: 3px; overflow: hidden; }
+    .efill  { height: 100%; background: var(--accent); border-radius: 3px; }
+    .epct   { width: 38px; text-align: right; font-weight: 600; color: var(--text); }
+
+    /* roadmap */
+    .rmap { display: flex; align-items: flex-start; }
+    .rnode { display: flex; flex-direction: column; align-items: center; flex-shrink: 0; }
+    .rdot { width: 9px; height: 9px; border-radius: 50%; background: var(--accent); }
+    .rdot.f { background: transparent; border: 1.5px solid var(--dim); }
+    .rdot.next { background: var(--warn); }
+    .rlabel { font-size: 0.57rem; color: var(--dim); margin-top: 5px; text-align: center; white-space: nowrap; line-height: 1.35; }
+    .rlabel.a { color: var(--accent); font-weight: 600; }
+    .rlabel.n { color: var(--warn); font-weight: 600; }
+    .rline { flex: 1; height: 1.5px; background: var(--bd); margin-top: 4px; }
+    .rline.done { background: rgba(12,201,160,0.32); }
+
+    /* funding highlight */
+    .funding-card {
+      background: rgba(255,189,61,0.07); border: 1px solid rgba(255,189,61,0.22);
+      border-radius: 12px; padding: 1.2rem 1.4rem;
+    }
+    .funding-card h2 { color: var(--warn); border-bottom-color: rgba(255,189,61,0.18); }
+
+    /* footer */
+    .foot { padding: 1.5rem 3rem; border-top: 1px solid var(--bd); display: flex; justify-content: space-between; align-items: center; position: relative; z-index: 1; }
+    .fname  { font-family: var(--ffd); font-size: 1.05rem; color: var(--text); display: block; }
+    .fsub   { font-size: 0.7rem; color: var(--dim); margin-top: 2px; display: block; }
+    .flink  { font-size: 0.81rem; color: var(--accent); font-weight: 500; display: block; text-decoration: none; }
+    .flink:hover { text-decoration: underline; }
+    .femail { font-size: 0.7rem; color: var(--dim); margin-top: 2px; display: block; }
+
+    @media (max-width: 780px) {
+      .hero, .col2, .tgrid { grid-template-columns: 1fr; }
+      .col3 { grid-template-columns: 1fr 1fr; }
+      .hero-l, .hero-r, .body, .foot { padding-left: 1.4rem; padding-right: 1.4rem; }
+      .sec-divider { margin: 0 1.4rem; }
+      .status-banner { padding: 0.65rem 1.4rem; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="wrap">
+  <div class="accent-bar"></div>
+
+  <!-- ── STATUS BANNER ── -->
+  <div class="status-banner">
+    <div class="sb-item">
+      <div class="sb-dot green"></div>
+      <span class="sb-label"><strong>Live Demo</strong> · Web App online</span>
+    </div>
+    <div class="sb-sep"></div>
+    <div class="sb-item">
+      <div class="sb-dot green"></div>
+      <span class="sb-label"><strong>Peer-reviewed</strong> · RSC Advances 2023</span>
+    </div>
+    <div class="sb-sep"></div>
+    <div class="sb-item">
+      <div class="sb-dot warn"></div>
+      <span class="sb-label"><strong>Alpha Waitlist open</strong> · Alpha Phase Start: Oct 2026</span>
+    </div>
+    <div class="sb-sep"></div>
+    <div class="sb-item">
+      <div class="sb-dot blue"></div>
+      <span class="sb-label"><strong>Seeking funding</strong> · Matrix manufacturing</span>
+    </div>
+  </div>
+
+  <!-- ── HERO ── -->
+  <div class="hero">
+    <div class="hero-l">
+      <div>
+        <div class="eyebrow">Health Technology · Tübingen · DACH</div>
+        <h1 class="logo-h1">Cell<br><em>Health</em><br>Stix</h1>
+      </div>
+      <p class="tagline">
+        The first continuous, non-invasive system for biochemical
+        cell-stress monitoring in everyday life — democratising lab
+        diagnostics for the consumer health market.
+      </p>
+      <div class="pill-row">
+        <span class="pill">MDA Biomarker</span>
+        <span class="pill">Non-Invasive</span>
+        <span class="pill">Digital Health</span>
+        <span class="pill b">CIELAB Colorimetry</span>
+        <span class="pill b">Razor-and-Blade</span>
+        <span class="pill w">Pre-Seed Stage</span>
+      </div>
+    </div>
+
+    <div class="hero-r">
+      <div class="pstack">
+        <div class="pitem">
+          <div class="picon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#0CC9A0" stroke-width="1.8" stroke-linecap="round">
+              <path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/>
+            </svg>
+          </div>
+          <div>
+            <span class="pname">Test Strip (Consumable)</span>
+            <span class="psub">Silver nanoprisms · MDA + creatinine · Jaffé reaction</span>
+          </div>
+        </div>
+        <div class="pitem">
+          <div class="picon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#0CC9A0" stroke-width="1.8" stroke-linecap="round">
+              <rect x="3" y="8" width="18" height="10" rx="2"/>
+              <path d="M7 8V6a2 2 0 012-2h6a2 2 0 012 2v2"/>
+              <line x1="12" y1="12" x2="12" y2="14"/>
+            </svg>
+          </div>
+          <div>
+            <span class="pname">Smartphone Reader</span>
+            <span class="psub">Light standardisation · CIELAB colour metric · OpenCV</span>
+          </div>
+        </div>
+        <div class="pitem">
+          <div class="picon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#0CC9A0" stroke-width="1.8" stroke-linecap="round">
+              <path d="M12 2a10 10 0 110 20A10 10 0 0112 2z"/>
+              <path d="M12 8v4l3 3"/>
+            </svg>
+          </div>
+          <div>
+            <span class="pname">App &amp; Trend Dashboard</span>
+            <span class="psub">Cell-stress index · Longitudinal trends · Personalised insights</span>
+          </div>
+        </div>
+      </div>
+
+      <a href="https://cellhealthstix.de" target="_blank" class="live-badge">
+        <div class="live-dot"></div>
+        <div>
+          <span class="live-top">Live Demo · Web App</span>
+          <span class="live-main">cellhealthstix.de</span>
+          <span class="live-sub">Analyzer · Trend Dashboard · User Guide</span>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <div class="sec-divider"></div>
+
+  <!-- ── BODY ── -->
+  <div class="body">
+
+    <!-- PROBLEM & SOLUTION -->
+    <div>
+      <div class="sec-label">The Problem</div>
+      <div class="col2">
+        <div>
+          <h2>Biochemical blindness in everyday life</h2>
+          <p>Despite more than one billion active wearables worldwide, a <strong>critical information gap at the cellular level</strong> persists. Today's devices capture only macroscopic parameters — HRV, sleep, activity — while the biochemical basis of vitality remains invisible.</p>
+          <p>Lab diagnostics are precise but expensive and slow, making them unsuitable for continuous everyday monitoring. There is no <strong>closed feedback loop</strong> between lifestyle choices and molecular response. <em class="src">BCG, MedTech Innovation Report, 2022</em></p>
+        </div>
+        <div>
+          <h2>Our solution</h2>
+          <p>Cell Health Stix bridges this gap by <strong>democratising lab diagnostics</strong>. The user dips a test strip into a urine sample, photographs it with a smartphone, and the app translates the colour reactions — via CIELAB colour-metric analysis — into an intuitive cell-stress index.</p>
+          <div class="accent-box">
+            Systems with immediate biochemical feedback show significantly higher effectiveness in behaviour change (Odds Ratio 2.1–3.4) compared with purely physiological wearables.
+            <em class="src"> — Patel et al., JAMA 2015</em>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sec-divider"></div>
+
+    <!-- SCIENCE -->
+    <div>
+      <div class="sec-label">Scientific Foundation</div>
+      <div class="col2">
+        <div>
+          <div class="peer-badge">Peer-reviewed · RSC Advances 2023</div>
+          <h2>MDA as a gold-standard biomarker</h2>
+          <p><strong>Malondialdehyde (MDA)</strong> is a byproduct of lipid peroxidation of unsaturated fatty acids and correlates directly with cellular damage caused by oxidative stress. As a clinically validated marker it has served as the gold standard in research for decades.</p>
+          <p>The underlying detection method is fully peer-reviewed: Bahavarnia et al. (RSC Advances, 2023) demonstrate the feasibility of low-cost, non-invasive test systems using paper-based diagnostics with silver nanoprisms (AgNPrs), achieving a lower limit of quantification of <strong>0.12 µM MDA</strong> in urine samples. The study further validates the naked-eye colour-shift sequence — from sea blue through violet, pink, and taupe to orange/yellowish-grey — as a reliable semi-quantitative readout, directly forming the colour scale used in the Cell Health Stix app.</p>
+          <p>The colour change is caused by <strong>morphological transformation of the triangular AgNPrs</strong> into circular nanodisks in the presence of MDA, inducing a measurable blue shift in the in-plane dipole resonance peak (LSPR). This phenomenon is highly sensitive, concentration-dependent, and stable for at least 30 days. <em class="src">Bahavarnia et al., RSC Adv., 2023, 13, 30499</em></p>
+        </div>
+        <div>
+          <h2>Creatinine as a reference marker</h2>
+          <p>To compensate for the variability in urine concentration due to hydration, the system pairs MDA with <strong>creatinine as a reference marker</strong>. The MDA-to-creatinine quotient normalises hydration status and delivers robust, comparable values regardless of fluid intake. <em class="src">Barr et al., Environmental Health Perspectives, 2005</em></p>
+          <h2 style="margin-top:1.2rem">Systemic integration as the core innovation</h2>
+          <p>The actual innovation lies in the <strong>systemic combination</strong> of three properties not previously united: direct biochemical measurement, continuous everyday usability, and data-driven interpretation. Smartphone cameras now achieve lab quality for colorimetric analysis — the technological foundation for longitudinal monitoring far beyond occasional lab visits. <em class="src">McKinsey, Digital Health Trends, 2021</em></p>
+          <div class="accent-box">
+            <strong>Key differentiator:</strong> No existing competitor addresses all three dimensions simultaneously. Cell Health Stix occupies the uncontested white space between wearables and lab diagnostics.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sec-divider"></div>
+
+    <!-- TECHNOLOGY / ANALYZER -->
+    <div>
+      <div class="sec-label">Technology &amp; Analyzer</div>
+      <div class="col2">
+        <div>
+          <h2>How the Analyzer works</h2>
+          <div class="steps">
+            <div class="step">
+              <span class="snum">1</span>
+              <div>
+                <span class="stitle">Urine sample → test strip</span>
+                <span class="sdesc">Dip for 2–3 sec · 5 min reaction time on a clean bright surface · avoid touching the reaction zones</span>
+              </div>
+            </div>
+            <div class="step">
+              <span class="snum">2</span>
+              <div>
+                <span class="stitle">Smartphone Reader standardises conditions</span>
+                <span class="sdesc">Shields ambient light · reproducible measurement tolerance &lt;±5 %</span>
+              </div>
+            </div>
+            <div class="step">
+              <span class="snum">3</span>
+              <div>
+                <span class="stitle">CIELAB colour analysis (dual-mode)</span>
+                <span class="sdesc">Automatic image capture via camera <em>or</em> manual colour tap — user selects the matching colour with one click, mapped directly to validated MDA &amp; creatinine concentrations. Usable without the Reader as a fallback.</span>
+              </div>
+            </div>
+            <div class="step">
+              <span class="snum">4</span>
+              <div>
+                <span class="stitle">Dual-zone readout</span>
+                <span class="sdesc">Zone 1 (AgNPrs): MDA colour shift blue→orange · Zone 2 (Jaffé reaction): creatinine reference value</span>
+              </div>
+            </div>
+            <div class="step">
+              <span class="snum">5</span>
+              <div>
+                <span class="stitle">Cell-stress index &amp; Trend Dashboard</span>
+                <span class="sdesc">Normalised MDA/creatinine quotient · persistent measurement history · personalised lifestyle insights</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h2>Colour spectrum &amp; measurement scale</h2>
+          <div class="glass" style="padding:1rem">
+            <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--dim);margin-bottom:0.5rem;font-weight:600">MDA Zone · AgNPrs · colour-to-concentration mapping</div>
+            <div class="cscale">
+              <div class="crow"><div class="csw" style="background:#2196B0"></div><span class="cn">Sea Blue</span><span class="cc">~0.06 µM</span><span class="ctag tok">OPTIMAL</span></div>
+              <div class="crow"><div class="csw" style="background:#40AABF"></div><span class="cn">Cyan Blue</span><span class="cc">~0.12 µM</span><span class="ctag tok">VERY GOOD</span></div>
+              <div class="crow"><div class="csw" style="background:#7B68B5"></div><span class="cn">Blue Violet</span><span class="cc">~0.3 µM</span><span class="ctag tok">NORMAL</span></div>
+              <div class="crow"><div class="csw" style="background:#8B5A9E"></div><span class="cn">Violet</span><span class="cc">~0.6 µM</span><span class="ctag tmod">MODERATE</span></div>
+              <div class="crow"><div class="csw" style="background:#6A3080"></div><span class="cn">Deep Purple</span><span class="cc">~1.2 µM</span><span class="ctag tmod">ELEVATED</span></div>
+              <div class="crow"><div class="csw" style="background:#C06080"></div><span class="cn">Pink / Mauve</span><span class="cc">~2.5–5 µM</span><span class="ctag thi">HIGH</span></div>
+              <div class="crow"><div class="csw" style="background:#D4804A"></div><span class="cn">Orange / Yellowish</span><span class="cc">~12–18 µM</span><span class="ctag thi">CRITICAL</span></div>
+            </div>
+            <div style="margin-top:0.75rem;padding-top:0.75rem;border-top:1px solid var(--bd)">
+              <div style="font-size:0.61rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--dim);margin-bottom:0.4rem;font-weight:600">Cell-Stress Index (MDA / Creatinine)</div>
+              <div class="stress-idx">
+                <div class="si sig">GREEN &lt;2</div>
+                <div class="si siy">YELLOW 2–6</div>
+                <div class="si sio">ORANGE 6–12</div>
+                <div class="si sir">RED &gt;12</div>
+              </div>
+              <div style="font-size:0.6rem;color:var(--dim);margin-top:4px">Unit: µM MDA per mg/dL creatinine</div>
+            </div>
+          </div>
+          <div class="accent-box" style="margin-top:1rem">
+            <strong>Colorimetric algorithm:</strong> Each colour visible on the test strip is uniquely mapped to a validated MDA and creatinine concentration derived from the Bahavarnia et al. calibration data. A single tap on the matching colour in the app is sufficient to compute the full cell-stress index — no image processing required in manual mode.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sec-divider"></div>
+
+    <!-- MARKET -->
+    <div>
+      <div class="sec-label">Market &amp; Positioning</div>
+      <div class="col2">
+        <div>
+          <h2>Convergence of three sectors</h2>
+          <p>The target market sits at the intersection of <strong>lab diagnostics, wearables and home diagnostics</strong> — a category described as "Next-Generation Personal Health Monitoring." <em class="src">IQVIA, Digital Health Trends, 2023</em></p>
+          <p>Digital Health is growing at <strong>&gt;15 % p.a.</strong>, driven by the structural shift from curative to preventive medicine. The global wellness economy is projected to reach USD 9.8 trillion by 2029. <em class="src">Global Wellness Institute, 2025</em></p>
+          <p>Four tailwinds: miniaturisation of complex diagnostics via nanomaterials, rising out-of-pocket spending in the longevity segment, IVDR regulation raising barriers for late entrants, and growing willingness to pay for data-driven self-optimisation. <em class="src">CB Insights, 2023</em></p>
+        </div>
+        <div>
+          <h2>Competitive positioning</h2>
+          <table class="ctable">
+            <thead>
+              <tr>
+                <th>Competitor</th>
+                <th>Type</th>
+                <th>Gap</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Everlywell / LetsGetChecked</td>
+                <td style="color:var(--dim)">D2C diagnostics</td>
+                <td style="color:var(--dim)">Point-in-time, no monitoring</td>
+              </tr>
+              <tr>
+                <td>Vivoo / Vessel Health</td>
+                <td style="color:var(--dim)">Lifestyle tracker</td>
+                <td style="color:var(--dim)">Superficial biomarkers</td>
+              </tr>
+              <tr>
+                <td>Apple / Oura / Garmin</td>
+                <td style="color:var(--dim)">Wearables</td>
+                <td style="color:var(--dim)">Indirect physiology only</td>
+              </tr>
+              <tr>
+                <td>Clinical lab</td>
+                <td style="color:var(--dim)">Diagnostics</td>
+                <td style="color:var(--dim)">Expensive, days of waiting</td>
+              </tr>
+              <tr class="hl" style="border-top:1px solid rgba(12,201,160,0.2)">
+                <td style="color:var(--accent)">Cell Health Stix</td>
+                <td><span class="badge-diff">USP</span></td>
+                <td style="color:var(--text);font-size:0.72rem">Continuous · clinically validated · everyday-ready</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="sec-divider"></div>
+
+    <!-- CURRENT STATUS & FUNDING -->
+    <div>
+      <div class="sec-label">Current Status &amp; Next Step</div>
+      <div class="col2">
+        <div class="funding-card">
+          <h2>Seeking funding · Matrix manufacturing</h2>
+          <p>The detection method is fully peer-reviewed and validated in human urine samples (Bahavarnia et al., RSC Advances, 2023). The web app, colorimetric algorithm and trend dashboard are <strong>live and testable today</strong>.</p>
+          <p>The next critical milestone is the <strong>physical manufacturing of the AgNPrs test strip matrix</strong> — transitioning from the validated laboratory protocol to a reproducible, everyday-stable consumable. This requires funding for lab-scale synthesis, matrix stabilisation under field conditions, and IP protection of the proprietary formulation.</p>
+          <div class="warn-box">
+            <strong>We are actively seeking Pre-Seed partners</strong> to fund the Testchemie validation and IP filing phase — the decisive de-risking step before product launch.
+          </div>
+        </div>
+        <div>
+          <h2>Alpha programme · October 2026</h2>
+          <p>We have already opened a <strong>waitlist for our planned alpha tester cohort</strong> launching in October 2026. Alpha users will receive early access to the full system — test strips, reader and app — and contribute real-world measurement data to validate performance under field conditions.</p>
+          <p>The alpha cohort will focus on our core target segments: <strong>biohackers, high-performance athletes and health-conscious early adopters</strong> in the DACH region, who have established willingness to pay for data-driven health tools.</p>
+          <div class="accent-box">
+            <strong>Join the waitlist:</strong> cellhealthstix.de<br>
+            <span style="color:var(--dim);font-size:0.78rem">Contact: emily.degott@gmail.com</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sec-divider"></div>
+
+    <!-- BUSINESS MODEL -->
+    <div>
+      <div class="sec-label">Business Model</div>
+      <div class="col2">
+        <div>
+          <h2>Razor-and-Blade 2.0</h2>
+          <p>The model pairs a low-friction hardware entry point with a high-margin recurring revenue stream. The <strong>Reader</strong> minimises the adoption barrier. <strong>Test strips</strong> form the central revenue driver. The <strong>analytics subscription</strong> maximises customer lifetime value through longitudinal data network effects.</p>
+          <p>Algorithms improve cumulatively with growing user numbers — the resulting proprietary longitudinal MDA database creates a sustainable moat that is difficult to replicate. <em class="src">Varian, Information Rules, 1999</em></p>
+          <div class="accent-box">
+            <strong>IP strategy:</strong> Selective patent protection on test chemistry and measurement methodology (matrix stabilisation of AgNPrs strips under real-world conditions). Colour-analysis algorithm as trade secret. Freedom-to-Operate secured through focus on application innovation.
+          </div>
+        </div>
+        <div>
+          <h2>Three revenue streams</h2>
+          <div class="glass" style="padding:1.1rem">
+            <div style="display:flex;flex-direction:column;gap:0.55rem;margin-bottom:1rem">
+              <div style="display:grid;grid-template-columns:1fr auto auto;gap:10px;align-items:center;padding:0.55rem 0.8rem;background:rgba(255,255,255,0.03);border-radius:7px;border:1px solid var(--bd)">
+                <span style="font-size:0.78rem;font-weight:600;color:var(--text)">Starter Kit (Reader)</span>
+                <span style="font-size:0.82rem;color:var(--accent);font-family:var(--ffd)">29–39 €</span>
+                <span style="font-size:0.62rem;color:var(--dim)">one-time</span>
+              </div>
+              <div style="display:grid;grid-template-columns:1fr auto auto;gap:10px;align-items:center;padding:0.55rem 0.8rem;background:rgba(255,255,255,0.03);border-radius:7px;border:1px solid var(--bd)">
+                <span style="font-size:0.78rem;font-weight:600;color:var(--text)">Test Strip (Consumable)</span>
+                <span style="font-size:0.82rem;color:var(--accent);font-family:var(--ffd)">4.90 €</span>
+                <span style="font-size:0.62rem;color:var(--dim)">per test</span>
+              </div>
+              <div style="display:grid;grid-template-columns:1fr auto auto;gap:10px;align-items:center;padding:0.55rem 0.8rem;background:rgba(12,201,160,0.07);border-radius:7px;border:1px solid rgba(12,201,160,0.2)">
+                <span style="font-size:0.78rem;font-weight:600;color:var(--text)">Analytics Subscription (App)</span>
+                <span style="font-size:0.82rem;color:var(--accent);font-family:var(--ffd)">39 €</span>
+                <span style="font-size:0.62rem;color:var(--dim)">per month</span>
+              </div>
+            </div>
+            <div style="padding-top:0.85rem;border-top:1px solid var(--bd)">
+              <p style="font-size:0.75rem;color:var(--muted);margin-bottom:0">
+                Initial go-to-market via <strong>D2C direct sales</strong> (performance marketing + content). From Year 3 expansion to <strong>B2B2C</strong> via fitness platforms and corporate wellness to structurally reduce customer acquisition costs. Long-term: licensing of the data platform to insurers and research partners.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sec-divider"></div>
+
+    <!-- TEAM -->
+    <div>
+      <div class="sec-label">Founding Team</div>
+      <div class="tgrid">
+        <div class="tcard">
+          <span class="trole">Founder &amp; Scientific Lead</span>
+          <span class="tname">Emily Rose Degott</span>
+          <div class="ttags">
+            <span class="ttag">MD candidate</span>
+<span class="ttag">Institute for Medical Genetics & Applied Genomics · University of Tübingen</span>
+            <span class="ttag"> Interdisciplinary Doctoral Program in Medicine (IPM)</span>
+            
+            
+          </div>
+          <p style="font-size:0.75rem;margin-top:0.8rem;margin-bottom:0">Responsible for biochemical product validation, experimental strategy and evidence-based user insights.</p>
+        </div>
+        <div class="tcard">
+          <span class="trole">Regulatory &amp; Strategy Lead</span>
+          <span class="tname">Luca Stempel</span>
+          <div class="ttags">
+            <span class="ttag">General Counsel · beglaubigt.de</span>
+            <span class="ttag">White-Label B2B SaaS · IVDR compliance</span>
+            <span class="ttag">YC-associated environment</span>
+            <span class="ttag">Law · IP &amp; competition law (Best of Class 2024)</span>
+          </div>
+          <p style="font-size:0.75rem;margin-top:0.8rem;margin-bottom:0">Focus on business model scaling, capital strategy and regulatory positioning (IVDR roadmap).</p>
+        </div>
+        <div class="tcard" style="grid-column:1/-1">
+          <span class="trole">Scientific Advisory Board</span>
+          <span class="tname" style="font-size:1rem">PD Dr. Thorsten Schmidt</span>
+          <div class="ttags">
+            <span class="ttag">Dr. rer. nat. Biochemistry</span>
+            <span class="ttag">Lab director · Institute for Medical Genetics &amp; Applied Genomics, Tübingen</span>
+            <span class="ttag">Master of Medical Education</span>
+           
+          </div>
+          <p style="font-size:0.75rem;margin-top:0.8rem;margin-bottom:0">
+            Network: <strong>Start-up Center Tübingen · START Munich</strong>
+          </p>
+        </div>
+      </div>
+      
+    </div>
+
+    <div class="sec-divider"></div>
+
+    <!-- ORGANISATION -->
+    <div>
+      <div class="sec-label">Organisation &amp; Location</div>
+      <div class="col2">
+        <div>
+          <h2>Component-oriented structure</h2>
+          <p>The organisation is structured not around classical functions but around <strong>core system components</strong>: test chemistry, reader, software platform and business model. This enables the tight coupling of product development and data-driven iteration that technology-driven start-ups require.</p>
+          <div class="orgchart" style="margin-top:0.9rem">
+            <div class="orgbox root">Founding team (Strategy &amp; IVDR)</div>
+            <div class="org-row">
+              <div class="orgbox">Product &amp; Technology</div>
+              <div class="orgbox">Data &amp; Analytics</div>
+              <div class="orgbox">Business &amp; Growth</div>
+              <div class="orgbox">Regulatory &amp; Ops</div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h2>Asset-light · knowledge-driven</h2>
+          <p><strong>Location: Tübingen</strong> — a university-adjacent innovation cluster with direct access to talent in biochemistry and data science. Active integration into Start-up Center Tübingen and START Munich.</p>
+          <p><strong>Make-or-Buy:</strong> Biochemical development, colour-analysis algorithms and product strategy remain in-house. Hardware manufacturing, regulatory consulting and specialised software development are outsourced — maximum scalability with focused capital deployment.</p>
+          <p>Headcount follows a phased model: lean core team during the validation phase, targeted expansion into growth, customer success and data science post-launch.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="sec-divider"></div>
+
+    <!-- ESG -->
+    <div>
+      <div class="sec-label">Sustainability &amp; ESG</div>
+      <div class="col2">
+        <div>
+          <h2>SDG contribution &amp; product architecture</h2>
+          <p>Sustainability is not a CSR add-on but an <strong>integral part</strong> of product design and supply chain strategy. By making oxidative-stress measurement accessible in daily life, we create the foundation for evidence-based behavioural decisions — directly contributing to reducing chronic disease burden on healthcare systems.</p>
+          <div class="sdg-row">
+            <div class="sdg"><span class="sdg-n">SDG 3</span><span class="sdg-l">Good Health</span></div>
+            <div class="sdg"><span class="sdg-n">SDG 12</span><span class="sdg-l">Responsible<br>Production</span></div>
+          </div>
+        </div>
+        <div>
+          <h2>Concrete ESG targets</h2>
+          <div class="ebar">
+            <span class="elabel">Biodegradable packaging</span>
+            <div class="etrack"><div class="efill" style="width:80%"></div></div>
+            <span class="epct">&gt;80 %</span>
+          </div>
+          <div class="ebar">
+            <span class="elabel">EU supply chain (Scope 3)</span>
+            <div class="etrack"><div class="efill" style="width:70%"></div></div>
+            <span class="epct">≥70 %</span>
+          </div>
+          <div class="ebar">
+            <span class="elabel">Diverse key positions</span>
+            <div class="etrack"><div class="efill" style="width:40%"></div></div>
+            <span class="epct">≥40 %</span>
+          </div>
+          <p style="margin-top:0.8rem;font-size:0.75rem">No single-use plastic from the R&amp;D phase onward. IVDR and European Green Deal integrated into product architecture from day one. ESG KPIs reviewed semi-annually.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="sec-divider"></div>
+
+    <!-- ROADMAP -->
+    <div>
+      <div class="sec-label">Roadmap &amp; Milestones</div>
+      <div class="glass" style="padding:1.4rem 1.6rem">
+        <div class="rmap">
+          <div class="rnode">
+            <div class="rdot"></div>
+            <div class="rlabel a">Concept<br>✓ done</div>
+          </div>
+          <div class="rline done"></div>
+          <div class="rnode">
+            <div class="rdot"></div>
+            <div class="rlabel a">Method<br>peer-reviewed</div>
+          </div>
+          <div class="rline done"></div>
+          <div class="rnode">
+            <div class="rdot"></div>
+            <div class="rlabel a">Web App<br>live &amp; testable</div>
+          </div>
+          <div class="rline done"></div>
+          <div class="rnode">
+            <div class="rdot"></div>
+            <div class="rlabel a">Alpha waitlist<br>open</div>
+          </div>
+          <div class="rline"></div>
+          <div class="rnode">
+            <div class="rdot next"></div>
+            <div class="rlabel n">Matrix mfg.<br>funding sought</div>
+          </div>
+          <div class="rline"></div>
+          <div class="rnode">
+            <div class="rdot f"></div>
+            <div class="rlabel">Alpha Phase Start<br>Oct 2026</div>
+          </div>
+          <div class="rline"></div>
+          <div class="rnode">
+            <div class="rdot f"></div>
+            <div class="rlabel">DACH<br>launch</div>
+          </div>
+          <div class="rline"></div>
+          <div class="rnode">
+            <div class="rdot f"></div>
+            <div class="rlabel">IVDR &amp;<br>EU expansion</div>
+          </div>
+        </div>
+
+        <div style="margin-top:1.3rem;padding-top:1rem;border-top:1px solid var(--bd)">
+          <div class="col3" style="gap:1rem">
+            <div>
+              <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--dim);font-weight:600;margin-bottom:0.3rem">Phase 1 · M0–6</div>
+              <p style="font-size:0.75rem;margin-bottom:0">Test-chemistry development, Reader prototype, App base (CIELAB / OpenCV) → <strong>Functional prototype</strong></p>
+            </div>
+            <div>
+              <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--dim);font-weight:600;margin-bottom:0.3rem">Phase 2 · M6–12</div>
+              <p style="font-size:0.75rem;margin-bottom:0">Reproducibility, AgNPrs stability testing, real-world field test → <strong>Validated alpha product</strong></p>
+            </div>
+            <div>
+              <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--dim);font-weight:600;margin-bottom:0.3rem">Phase 3 · M12–36</div>
+              <p style="font-size:0.75rem;margin-bottom:0">DACH launch, D2C build-up, IVDR classification → <strong>Market entry &amp; scaling</strong></p>
+            </div>
+          </div>
+          <p style="font-size:0.75rem;margin-top:0.9rem;margin-bottom:0;color:var(--muted)">
+            <strong>Critical path:</strong> Test-chemistry validation → system integration → pilot validation. Parallel workstreams: software iteration, app design, hardware engineering. Buffer periods at critical interfaces ensure IVDR conformity without cascade delays.
+            <em class="src"> Bahavarnia et al., 2023 · PMI, 2021</em>
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /body -->
+
+  <!-- ── FOOTER ── -->
+  <div class="foot">
+    <div>
+      <span class="fname">Emily Rose Degott &amp; Luca Stempel</span>
+      <span class="fsub">Founders · Cell Health Stix · Tübingen, April 2026</span>
+    </div>
+    <div style="text-align:right">
+      <a href="https://cellhealthstix.de" target="_blank" class="flink">cellhealthstix.de</a>
+      <span class="femail">emily.degott@gmail.com</span>
+    </div>
+  </div>
+
+</div><!-- /wrap -->
+</body>
+</html>

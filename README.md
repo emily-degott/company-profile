@@ -1,3 +1,7 @@
+[Click here to view the Full Strategic Profile (Live Site)](https://emily-degott.github.io/company-profile/)
+
+---
+
 # Cell Health Stix – Company Profile & Strategic Deep Dive
 
 This repository hosts the strategic framework for **Cell Health Stix**, a MedTech initiative developed for the START MedTech 2026 ecosystem. It bridges the gap between macroscopic lifestyle tracking and microscopic biochemical analysis.
